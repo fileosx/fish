@@ -1,0 +1,10 @@
+<script type="text/javascript" src="{{ asset('modules/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('modules/bootstrap/js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('modules/fullPage/dist/fullpage.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('modules/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('modules/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('modules/OwlCarousel2/dist/owl.carousel.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('modules/jquery.appear.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+<script type="text/javascript" src="{{ asset('modules/WOW/dist/wow.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('modules/jQuery.equalHeights/jquery.equalheights.min.js') }}"></script>

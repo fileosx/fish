@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lead extends Model
 {
+
     use Taggable;
 
     const STATUS_NEW           = 1;
@@ -13,6 +14,38 @@ class Lead extends Model
     const STATUS_VISITED       = 3;
     const STATUS_COMPLETED     = 4;
     const STATUS_FAILED        = 5;
+
+	protected $fillable = array(
+		'user_id',
+		'company',
+		'name',
+		'email',
+		'phone',
+		'city',
+		'type',
+		'segment',
+		'owner_qty',
+		'capacity',
+		'external_pos',
+		'pos_type',
+		'screens',
+		'screens_qty',
+		'critical',
+		'cash_register',
+		'printers',
+		'type_general',
+		'type_specific',
+		'franchise',
+		'xef_soft_stock',
+		'xef_soft_stock_other',
+		'xef_soft_staff',
+		'xef_soft_staff_other',
+		'xef_soft_book',
+		'xef_soft_book_other',
+		'xef_soft_erp',
+		'xef_soft_erp_other',
+	);
+
 
     public function organization()
     {

@@ -1,24 +1,22 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <img class="img-responsive login-logo" alt="{{ config('app.name', 'Overview Summit') }}" src="{{ asset('images/login-logo.png') }}">
 
-                <div class="card-body">
-                    @if (session('resent'))
-                        <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
-                        </div>
-                    @endif
+                @if (session('resent'))
+                    <div class="alert alert-revo" role="alert">
+                        @lang('orange/auth.register.verifyNotification')
+                    </div>
+                @endif
 
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }}, <a href="{{ route('verification.resend') }}">{{ __('click here to request another') }}</a>.
+                <div class="box-info">
+                    <h3>@lang('orange/auth.register.verifyTitle')</h3><br />
+                    @lang('orange/auth.register.verifyHint')
+                    <br /><br />
+                    @lang('orange/auth.register.verifyLinkIntro'), <br /><a href="{{ route('verification.resend') }}" class="btn-simlynk-inline align-center">@lang('orange/auth.register.verifyLinkClick')</a>.<br /><br />
                 </div>
             </div>
         </div>
-    </div>
-</div>
 @endsection

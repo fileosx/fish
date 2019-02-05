@@ -11,10 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Auth::routes();
+	Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+	//Route::middleware(['verified', 'user.active'])->group(function () {
+		Route::get('/', 'homeController@index')->middleware("verified")->middleware("user.active")->name("home");
+
+		Route::post('/lead/fetchTypeSegments', 'LeadController@fetchTypeSegments')->middleware("verified")->middleware("user.active")->name("lead.fetch");
+		Route::resource("lead", 'LeadController');
+	//});
+
+
+	// Locale switch
+	Route::get('/language/{lang}', function ($lang) {
+		Session::put('locale', $lang);
+		return back();
+	})->name('langroute');
